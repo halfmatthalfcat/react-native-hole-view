@@ -37,7 +37,7 @@ andBorderBottomRightRadius:(CGFloat)borderBottomRightRadius;
 
 @property (nonatomic) NSDictionary *animation;
 
-@property (nonatomic) BOOL *passThrough;
+@property (nonatomic) BOOL *touchThrough;
 
 @property (nonatomic, copy) RCTDirectEventBlock onAnimationFinished;
 

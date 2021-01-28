@@ -265,7 +265,7 @@ andBorderBottomRightRadius:(CGFloat)borderBottomRightRadius
 {
 	__block BOOL pointInPath = NO;
 	
-	if (self.passThrough && !CGPathContainsPoint(self.maskPath.CGPath, nil, point, YES)) {
+	if (self.touchThrough && !CGPathContainsPoint(self.maskPath.CGPath, nil, point, YES)) {
 		pointInPath = YES;
 	}
 	

@@ -24,7 +24,7 @@ RCT_EXPORT_VIEW_PROPERTY(animation, NSDictionary)
 
 RCT_EXPORT_VIEW_PROPERTY(onAnimationFinished, RCTDirectEventBlock)
 
-RCT_EXPORT_VIEW_PROPERTY(passThrough, BOOL)
+RCT_EXPORT_VIEW_PROPERTY(touchThrough, BOOL)
 
 -(UIView*)view{
     return [RNHoleView new];

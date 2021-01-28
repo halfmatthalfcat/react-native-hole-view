@@ -40,7 +40,7 @@ export interface IRNHoleView extends ViewProps {
     holes?: RNHole[];
     animation?: IRNHoleViewAnimation;
     onAnimationFinished?: () => void;
-    passThrough?: boolean;
+    touchThrough?: boolean;
 }
 
 export const RNHoleView: React.FC<IRNHoleView> = props => {
