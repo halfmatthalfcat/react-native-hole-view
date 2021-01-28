@@ -47,6 +47,11 @@ class RNHoleViewManager(private val reactContext: ReactApplicationContext): View
         )
     }
 
+    @ReactProp(name = "disabled")
+    fun setDisabled(view: RNHoleView, disabled: Boolean) {
+        view.disabled = disabled
+    }
+
     @ReactProp(name = "animation")
     fun setAnimation(view: RNHoleView, animation: ReadableMap) {
         var duration = RNHoleView.ANIMATION_DURATION_DEFAULT
