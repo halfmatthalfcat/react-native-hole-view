@@ -47,9 +47,9 @@ class RNHoleViewManager(private val reactContext: ReactApplicationContext): View
         )
     }
 
-    @ReactProp(name = "disabled")
-    fun setDisabled(view: RNHoleView, disabled: Boolean) {
-        view.disabled = disabled
+    @ReactProp(name = "passThrough")
+    fun setPassThrough(view: RNHoleView, passThrough: Boolean) {
+        view.passThrough = passThrough
     }
 
     @ReactProp(name = "animation")

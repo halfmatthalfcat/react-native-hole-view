@@ -63,7 +63,7 @@ class RNHoleView(context: Context) : FrameLayout(context) {
 
     var animation: Animation? = null
     var onAnimationFinished: (() -> Unit)? = null
-    var disabled: Boolean = false
+    var passThrough: Boolean = false
 
     private var mHolesPath: Path? = null
     private val mHolesPaint: Paint
@@ -209,7 +209,7 @@ class RNHoleView(context: Context) : FrameLayout(context) {
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
         val inside = isTouchInsideHole(event.x.toInt(), event.y.toInt())
-        if (inside && !disabled) {
+        if (inside && passThrough) {
             return false
         }
         return !inside

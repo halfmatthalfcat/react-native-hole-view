@@ -77,15 +77,6 @@ andBorderBottomRightRadius:(CGFloat)borderBottomRightRadius
 	[self setMaskPath:self.holePaths skipAnimation:YES];
 }
 
--(void)setDisabled:(BOOL *)disabled{
-    if (disabled) {
-        [self setUserInteractionEnabled:NO];
-    } else {
-        [self setUserInteractionEnabled:YES];
-    }
-}
-
-
 -(void)setHoles:(NSArray<NSDictionary *> *)holes
 {
 	NSMutableArray <RNHoleViewHole*> *parsedHoles = @[].mutableCopy;
@@ -260,7 +251,7 @@ andBorderBottomRightRadius:(CGFloat)borderBottomRightRadius
 
 - (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event
 {
-	if (!self.userInteractionEnabled || [self pointInRects:point]) {
+	if ([self pointInRects:point] || !self.userInteractionEnabled) {
 		return NO;
 	}
 	
@@ -274,7 +265,7 @@ andBorderBottomRightRadius:(CGFloat)borderBottomRightRadius
 {
 	__block BOOL pointInPath = NO;
 	
-	if (!CGPathContainsPoint(self.maskPath.CGPath, nil, point, YES) ) {
+	if (self.passThrough && !CGPathContainsPoint(self.maskPath.CGPath, nil, point, YES)) {
 		pointInPath = YES;
 	}
 	
