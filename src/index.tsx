@@ -13,7 +13,8 @@ export class RNHole {
     x: number;
     y: number;
     borderRadius?: number;
-    isRTL? = false;
+    isRTL?: boolean = false;
+    disabled?: boolean = false;
     borderTopLeftRadius? = DEFAULT_RADIUS_VALUE;
     borderTopRightRadius? = DEFAULT_RADIUS_VALUE;
     borderBottomLeftRadius? = DEFAULT_RADIUS_VALUE;

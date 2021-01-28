@@ -37,6 +37,8 @@ andBorderBottomRightRadius:(CGFloat)borderBottomRightRadius;
 
 @property (nonatomic) NSDictionary *animation;
 
+@property (nonatomic) NSNumber *disabled;
+
 @property (nonatomic, copy) RCTDirectEventBlock onAnimationFinished;
 
 @end

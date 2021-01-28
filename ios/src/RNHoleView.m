@@ -45,6 +45,8 @@ andBorderBottomRightRadius:(CGFloat)borderBottomRightRadius
 @property (nonatomic) CAShapeLayer *maskLayer;
 @property (nonatomic) UIBezierPath *maskPath;
 
+@property (nonatomic) BOOL *disabled;
+
 @property (nonatomic) NSNumber *animationDuration;
 @property (nonatomic) CAMediaTimingFunction *animationTimingFunction;
 
@@ -75,6 +77,10 @@ andBorderBottomRightRadius:(CGFloat)borderBottomRightRadius
 	_maskLayer.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
 	
 	[self setMaskPath:self.holePaths skipAnimation:YES];
+}
+
+-(void)setDisabled:(BOOL *)disabled{
+  _disabled = disabled
 }
 
 
@@ -252,7 +258,7 @@ andBorderBottomRightRadius:(CGFloat)borderBottomRightRadius
 
 - (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event
 {
-	if ( [self pointInRects:point] || !self.userInteractionEnabled) {
+	if ( _disabled || [self pointInRects:point] || !self.userInteractionEnabled ) {
 		return NO;
 	}
 	

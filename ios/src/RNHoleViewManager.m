@@ -24,6 +24,8 @@ RCT_EXPORT_VIEW_PROPERTY(animation, NSDictionary)
 
 RCT_EXPORT_VIEW_PROPERTY(onAnimationFinished, RCTDirectEventBlock)
 
+RCT_EXPORT_VIEW_PROPERTY(disabled, BOOL)
+
 -(UIView*)view{
     return [RNHoleView new];
 }
