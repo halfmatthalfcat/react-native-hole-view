@@ -45,8 +45,6 @@ andBorderBottomRightRadius:(CGFloat)borderBottomRightRadius
 @property (nonatomic) CAShapeLayer *maskLayer;
 @property (nonatomic) UIBezierPath *maskPath;
 
-@property (nonatomic) BOOL *disabled;
-
 @property (nonatomic) NSNumber *animationDuration;
 @property (nonatomic) CAMediaTimingFunction *animationTimingFunction;
 
@@ -80,7 +78,11 @@ andBorderBottomRightRadius:(CGFloat)borderBottomRightRadius
 }
 
 -(void)setDisabled:(BOOL *)disabled{
-  _disabled = disabled
+    if (disabled) {
+        [self setUserInteractionEnabled:NO];
+    } else {
+        [self setUserInteractionEnabled:YES];
+    }
 }
 
 
@@ -258,7 +260,7 @@ andBorderBottomRightRadius:(CGFloat)borderBottomRightRadius
 
 - (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event
 {
-	if ( _disabled || [self pointInRects:point] || !self.userInteractionEnabled ) {
+	if ( [self pointInRects:point] || !self.userInteractionEnabled ) {
 		return NO;
 	}
 	
