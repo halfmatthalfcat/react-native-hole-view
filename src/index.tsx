@@ -14,7 +14,6 @@ export class RNHole {
     y: number;
     borderRadius?: number;
     isRTL?: boolean = false;
-    disabled?: boolean = false;
     borderTopLeftRadius? = DEFAULT_RADIUS_VALUE;
     borderTopRightRadius? = DEFAULT_RADIUS_VALUE;
     borderBottomLeftRadius? = DEFAULT_RADIUS_VALUE;
@@ -41,6 +40,7 @@ export interface IRNHoleView extends ViewProps {
     holes?: RNHole[];
     animation?: IRNHoleViewAnimation;
     onAnimationFinished?: () => void;
+    disabled?: boolean;
 }
 
 export const RNHoleView: React.FC<IRNHoleView> = props => {

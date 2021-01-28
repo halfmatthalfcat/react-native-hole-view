@@ -208,8 +208,8 @@ class RNHoleView(context: Context) : FrameLayout(context) {
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
-        val inside = !disabled && isTouchInsideHole(event.x.toInt(), event.y.toInt())
-        if (inside) {
+        val inside = isTouchInsideHole(event.x.toInt(), event.y.toInt())
+        if (inside && !disabled) {
             return false
         }
         return !inside

@@ -260,7 +260,7 @@ andBorderBottomRightRadius:(CGFloat)borderBottomRightRadius
 
 - (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event
 {
-	if ( [self pointInRects:point] || !self.userInteractionEnabled ) {
+	if (!self.userInteractionEnabled || [self pointInRects:point]) {
 		return NO;
 	}
 	
